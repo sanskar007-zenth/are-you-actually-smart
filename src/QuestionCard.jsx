@@ -29,16 +29,17 @@ function QuestionCard({
         <div className="space-y-3">
           {question.options.map(([option, text]) => (
             <AnswerButton
-              key={option}
-              option={option}
-              text={text}
-              selected={selectedAnswer === option}
-              onClick={() => {
-                if (!showFeedback) {
-                  onAnswer(option)
-                }
-              }}
-            />
+  key={option}
+  option={option}
+  text={text}
+  selected={selectedAnswer === option}
+  isCorrect={option === question.answer}
+  onClick={() => {
+    if (!showFeedback) {
+      onAnswer(option)
+    }
+  }}
+/>
           ))}
         </div>
 
